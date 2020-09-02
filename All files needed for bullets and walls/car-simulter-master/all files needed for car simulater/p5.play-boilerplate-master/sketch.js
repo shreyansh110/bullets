@@ -14,7 +14,7 @@ function setup() {
 speed=random(223,321);
 thickness=random(22,83);
 weight=random(30,52);
-
+damage=0.5*weight*speed*speed/thickness*thickness*thickness;
  }
 
  function draw() {
@@ -25,12 +25,12 @@ weight=random(30,52);
  bullet.velocityX=0;
  damage=0.5*weight*speed*speed/thickness*thickness*thickness;
  }
-
+ console.log(damage);
 if(damage<10&&bullet.x-wall.x<wall.width/2+bullet.width/2){
 wall.shapeColor="green";
 }
 
-if(damage>10&&bullet.x-wall.x<wall.width/2+bullet.width/2){
+if(damage>10 && bullet.x-wall.x<wall.width/2+bullet.width/2){
   wall.shapeColor="red";
 }
 
