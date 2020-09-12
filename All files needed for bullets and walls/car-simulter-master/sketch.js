@@ -14,27 +14,43 @@ function setup() {
 speed=random(2,5);
 thickness=random(3,6);
 weight=random(2,5);
-damage=0.5*weight*speed*speed/thickness*thickness*thickness;
+
  }
 
  function draw() {
   background(80,500,255);  
   bullet.velocityX=-8;
 
- if(bullet.x-wall.x<wall.width/2+bullet.width/2){
- bullet.velocityX=0;
- damage=0.5*weight*speed*speed/thickness*thickness*thickness;
- }
- console.log(damage);
-if(damage<100&&bullet.x-wall.x<wall.width/2+bullet.width/2){
-wall.shapeColor="green";
-}
 
-if(damage>100 && bullet.x-wall.x<wall.width/2+bullet.width/2){
-  wall.shapeColor="red";
-}
 
 
  drawSprites();
-  
+  hascollided();
  }
+
+function hascollided(bullat,wall){
+  
+  damage=0.5*weight*speed*speed/thickness*thickness*thickness;
+
+ 
+  if(bullet.x-wall.x<wall.width/2+bullet.width/2){
+    bullet.velocityX=0;
+    damage=0.5*weight*speed*speed/thickness*thickness*thickness;
+    }
+    console.log(damage);
+   if(damage<100&&bullet.x-wall.x<wall.width/2+bullet.width/2){
+   wall.shapeColor="green";
+   }
+   
+   if(damage>100 && bullet.x-wall.x<wall.width/2+bullet.width/2){
+     wall.shapeColor="red";
+   }
+}
+
+
+
+
+
+
+
+
