@@ -25,10 +25,10 @@ weight=random(2,5);
 
 
  drawSprites();
-  hascollided();
+hascollided(bullet,wall);
  }
 
-function hascollided(bullat,wall){
+function hascollided(bullet,wall){
   
   damage=0.5*weight*speed*speed/thickness*thickness*thickness;
 
